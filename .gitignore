@@ -1,0 +1,32 @@
+# Project Folders
+media/
+venv/
+env/
+node_modules/
+
+# Project Files
+db.sqlite3
+.Python
+client_secrets.json
+csr.pem
+privatekey.pem
+server.crt
+
+# File Types
+*.pyc
+*.xml
+.DS_Store
+
+# Files
+.DS_Store
+.idea
+<<<<<<< HEAD
+=======
+.staticfiles
+dump.rdb
+>>>>>>> 058e2333101f541434abe3ac97b52d2fff2e7f0e
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
