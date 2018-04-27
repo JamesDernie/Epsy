@@ -47,7 +47,7 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'rest_auth.registration',
-    'folders',8
+    'folders',
     'links',
     'profiles',
     'tags',
