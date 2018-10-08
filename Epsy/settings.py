@@ -60,16 +60,20 @@ INSTALLED_APPS = [
     'rest_auth',
     'allauth',
     'allauth.account',
+    'corsheaders',
     'rest_auth.registration',
+    'django_nose',
     'folders',
     'links',
     'profiles',
+    'scraper',
     'tags',
     'users',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -108,7 +112,7 @@ WSGI_APPLICATION = 'Epsy.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'epsy',
+        'NAME': 'epsyDB',
         'USER': 'postgres',
         'PASSWORD': 'd123',
         'HOST': '',
@@ -172,7 +176,7 @@ ACCOUNT_USERNAME_REQUIRED = False
 
 # Configure the JWTs to expire after 1 hour, and allow users to refresh near-expiration tokens
 JWT_AUTH = {
-    'JWT_EXPIRATION_DELTA': datetime.timedelta(hours=1),
+    'JWT_EXPIRATION_DELTA': datetime.timedelta(days=30),
     'JWT_ALLOW_REFRESH': True,
 }
 
@@ -191,3 +195,14 @@ REST_AUTH_SERIALIZERS = {
 
 # Enables django-rest-auth to use JWT tokens instead of regular tokens.
 REST_USE_JWT = True
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# CORS
+
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_REPLACE_HTTPS_REFERER = True
+
+# Tests
+TEST_RUNNER = 'django_nose.NoseTestSuiteRunner'
+

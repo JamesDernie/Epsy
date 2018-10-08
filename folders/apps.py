@@ -1,5 +1,5 @@
 from django.apps import AppConfig
 
 
-class CategoriesConfig(AppConfig):
+class FoldersConfig(AppConfig):
     name = 'folders'
